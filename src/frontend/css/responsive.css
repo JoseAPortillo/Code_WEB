@@ -13,7 +13,7 @@
     .hero { padding: 24px 12px 48px; }
     .term-body { padding: 28px 16px 32px; }
     .term-title { display: none; }
-    .ascii-banner { font-size: clamp(14px, 5vw, 24px); }
+    .ascii-banner { font-size: clamp(16px, 5vw, 26px); }
     .section-kicker { font-size: 15px; }
     .project-row { grid-template-columns: 1fr auto; gap: 8px 14px; padding: 20px 4px; }
     .project-index { grid-row: span 2; }
