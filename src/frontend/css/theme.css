@@ -1,39 +1,57 @@
         @font-face {
-            font-family: "Geist Mono";
-            src: url("/static/fonts/geist-mono.woff2") format("woff2");
+            font-family: "Silkscreen";
+            src: url("/static/fonts/silkscreen-latin.woff2") format("woff2");
             font-style: normal;
-            font-weight: 100 900;
+            font-weight: 400;
             font-display: swap;
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
         @font-face {
-            font-family: "Geist Mono";
-            src: url("/static/fonts/geist-mono-latinext.woff2") format("woff2");
+            font-family: "Silkscreen";
+            src: url("/static/fonts/silkscreen-latinext.woff2") format("woff2");
             font-style: normal;
-            font-weight: 100 900;
+            font-weight: 400;
             font-display: swap;
             unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
         }
         @font-face {
-            font-family: "Geist Pixel Square";
-            src: url("/static/fonts/geist-pixel-square.woff2") format("woff2");
+            font-family: "Silkscreen";
+            src: url("/static/fonts/silkscreen-bold-latin.woff2") format("woff2");
             font-style: normal;
-            font-weight: 400;
+            font-weight: 700;
             font-display: swap;
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
         @font-face {
-            font-family: "Geist Pixel Grid";
-            src: url("/static/fonts/geist-pixel-grid.woff2") format("woff2");
+            font-family: "Silkscreen";
+            src: url("/static/fonts/silkscreen-bold-latinext.woff2") format("woff2");
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        @font-face {
+            font-family: "VT323";
+            src: url("/static/fonts/vt323-latin.woff2") format("woff2");
             font-style: normal;
             font-weight: 400;
             font-display: swap;
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: "VT323";
+            src: url("/static/fonts/vt323-latinext.woff2") format("woff2");
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
         }
 
         :root {
             color-scheme: dark;
-            --font-body: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-            --font-display: "Geist Pixel Square", "Geist Mono", monospace;
-            --font-grid: "Geist Pixel Grid", "Geist Mono", monospace;
+            --font-body: "VT323", "Courier New", monospace;
+            --font-display: "Silkscreen", "VT323", monospace;
+            --font-grid: "VT323", "Courier New", monospace;
             --bg: #08090b;
             --bg-raised: #0d0f12;
             --bg-card: #101215;
@@ -52,21 +70,4 @@
             --blue: #67a8ff;
             --header: rgba(8, 9, 11, 0.84);
             --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
-        }
-
-        :root[data-theme="light"] {
-            color-scheme: light;
-            --bg: #f1f2ed;
-            --bg-raised: #f8f9f5;
-            --bg-card: #fafbf7;
-            --bg-soft: #e7e9e2;
-            --text: #11130f;
-            --text-soft: #545950;
-            --text-faint: #81877d;
-            --line: #d2d5cd;
-            --line-strong: #afb4a9;
-            --accent: #577a00;
-            --accent-soft: rgba(87, 122, 0, 0.12);
-            --header: rgba(241, 242, 237, 0.86);
-            --shadow: 0 28px 80px rgba(20, 24, 16, 0.11);
         }

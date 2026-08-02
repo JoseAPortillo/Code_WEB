@@ -1,12 +1,6 @@
-// Bootstrap: import modules, wire theme + directory, scroll spy, initial render.
-// Module scripts are deferred, so the DOM is fully parsed when this runs —
-// element lookups in imported modules are safe. No globals leak to window.
-
-import { initTheme } from "./theme.js";
-import { initDirectory, renderCategories, bindCategoryEvents, renderCards } from "./directory.js";
-
-initTheme();
-initDirectory();
+// Bootstrap: wire scroll spy.
+// Module scripts are deferred, so the DOM is fully parsed when this runs.
+// No globals leak to window.
 
 // Scroll spy para el nav
 const navLinks = document.querySelectorAll(".topbar-nav a");
@@ -19,7 +13,3 @@ const spy = new IntersectionObserver((entries) => {
     });
 }, { rootMargin: "-40% 0px -55% 0px" });
 sections.forEach(s => spy.observe(s));
-
-renderCategories();
-bindCategoryEvents();
-renderCards();
