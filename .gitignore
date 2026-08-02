@@ -18,3 +18,8 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+.windsurf/
+
+# Server logs
+server.log
+server.err.log
