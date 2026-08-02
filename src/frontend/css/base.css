@@ -1,32 +1,60 @@
+* { box-sizing: border-box; }
 
-        * { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--bg); }
 
-        html { scroll-behavior: smooth; background: var(--bg); }
+body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
 
-        body {
-            margin: 0;
-            min-width: 320px;
-            background:
-                radial-gradient(circle at 50% -20%, rgba(202, 255, 61, 0.045), transparent 32rem),
-                var(--bg);
-            color: var(--text);
-            font-family: var(--font-body);
-            font-size: 15px;
-            line-height: 1.6;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-        }
+button, input { color: inherit; font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { border: 0; }
+a { color: inherit; text-decoration: none; }
 
-        button, input { color: inherit; font: inherit; }
-        button, a { -webkit-tap-highlight-color: transparent; }
-        button { border: 0; }
-        a { color: inherit; text-decoration: none; }
+::selection { background: var(--accent); color: var(--bg); }
 
-        ::selection { background: var(--accent); color: var(--bg); }
+/* CRT overlay: scanlines + vignette */
+body::after {
+    content: "";
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 2px,
+        rgba(0, 0, 0, 0.16) 3px,
+        rgba(0, 0, 0, 0) 4px
+    );
+    opacity: 0.5;
+}
 
-        .site-shell {
-            width: min(100%, 1600px);
-            margin-inline: auto;
-            overflow: clip;
-            border-inline: 1px solid var(--line);
-        }
+body::before {
+    content: "";
+    position: fixed;
+    z-index: 998;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 45%, transparent 58%, rgba(0, 0, 0, 0.38) 100%);
+}
+
+.site-shell {
+    width: min(100%, 1600px);
+    margin-inline: auto;
+    overflow: clip;
+    border-inline: 1px solid var(--line);
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}

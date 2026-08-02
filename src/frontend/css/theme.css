@@ -1,73 +1,41 @@
-        @font-face {
-            font-family: "Silkscreen";
-            src: url("/static/fonts/silkscreen-latin.woff2") format("woff2");
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-        @font-face {
-            font-family: "Silkscreen";
-            src: url("/static/fonts/silkscreen-latinext.woff2") format("woff2");
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-        }
-        @font-face {
-            font-family: "Silkscreen";
-            src: url("/static/fonts/silkscreen-bold-latin.woff2") format("woff2");
-            font-style: normal;
-            font-weight: 700;
-            font-display: swap;
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-        @font-face {
-            font-family: "Silkscreen";
-            src: url("/static/fonts/silkscreen-bold-latinext.woff2") format("woff2");
-            font-style: normal;
-            font-weight: 700;
-            font-display: swap;
-            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-        }
-        @font-face {
-            font-family: "VT323";
-            src: url("/static/fonts/vt323-latin.woff2") format("woff2");
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-        @font-face {
-            font-family: "VT323";
-            src: url("/static/fonts/vt323-latinext.woff2") format("woff2");
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-        }
+@font-face {
+    font-family: "VT323";
+    src: url("/static/fonts/vt323-latin.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "VT323";
+    src: url("/static/fonts/vt323-latinext.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 
-        :root {
-            color-scheme: dark;
-            --font-body: "VT323", "Courier New", monospace;
-            --font-display: "Silkscreen", "VT323", monospace;
-            --font-grid: "VT323", "Courier New", monospace;
-            --bg: #08090b;
-            --bg-raised: #0d0f12;
-            --bg-card: #101215;
-            --bg-soft: #14171b;
-            --text: #f2f4ef;
-            --text-soft: #a0a59d;
-            --text-faint: #6d726b;
-            --line: #262a2d;
-            --line-strong: #393e41;
-            --accent: #caff3d;
-            --accent-soft: rgba(202, 255, 61, 0.12);
-            --purple: #a58aff;
-            --cyan: #5ce1e6;
-            --orange: #ff9f43;
-            --pink: #ff75aa;
-            --blue: #67a8ff;
-            --header: rgba(8, 9, 11, 0.84);
-            --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
-        }
+:root {
+    color-scheme: dark;
+    --font-body: "VT323", "Courier New", monospace;
+    --font-display: "VT323", "Courier New", monospace;
+    --font-grid: "VT323", "Courier New", monospace;
+    --bg: #050807;
+    --bg-raised: #0a0f0b;
+    --bg-card: #0b120d;
+    --bg-soft: #0d1410;
+    --text: #c8ffd4;
+    --text-soft: #7fb98f;
+    --text-faint: #4c6b57;
+    --line: #16291c;
+    --line-strong: #24402c;
+    --accent: #00ff41;
+    --accent-soft: rgba(0, 255, 65, 0.08);
+    --purple: #b18cff;
+    --cyan: #5ce1e6;
+    --orange: #ffb347;
+    --pink: #ff75aa;
+    --blue: #67a8ff;
+    --header: rgba(5, 8, 7, 0.92);
+    --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}

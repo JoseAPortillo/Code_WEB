@@ -2,9 +2,9 @@
 
 
 def test_static_fonts_served(client):
-    resp = client.get("/static/fonts/silkscreen-latin.woff2")
+    resp = client.get("/static/fonts/vt323-latin.woff2")
     assert resp.status_code == 200
-    resp = client.get("/static/fonts/silkscreen-bold-latin.woff2")
+    resp = client.get("/static/fonts/vt323-latinext.woff2")
     assert resp.status_code == 200
 
 

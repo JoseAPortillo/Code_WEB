@@ -1,27 +1,24 @@
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+    .project-row { grid-template-columns: 48px minmax(0, 1fr) auto auto; }
+    .project-tags { display: none; }
+    .about-strip { grid-template-columns: 1fr; }
+    .about-strip > a { max-width: 190px; }
+}
 
-        /* ---------- RESPONSIVE ---------- */
-        @media (max-width: 1024px) {
-            .project-row { grid-template-columns: 40px minmax(0, 1fr) auto auto; }
-            .project-tags { display: none; }
-            .about-strip { grid-template-columns: 1fr; }
-            .about-strip > a { max-width: 190px; }
-        }
-
-        @media (max-width: 720px) {
-            .topbar { padding: 0 20px; grid-template-columns: 1fr auto; }
-            .topbar-nav { display: none; }
-            .brand-name { font-size: 18px; }
-            .hero { padding: 80px 24px 60px; min-height: 440px; }
-            .directory { padding: 80px 20px 90px; }
-            .directory-heading { flex-direction: column; align-items: start; gap: 16px; }
-            .directory-heading > p { text-align: left; }
-            .project-row { grid-template-columns: 1fr auto; gap: 10px 16px; padding: 22px 4px; }
-            .project-index { grid-row: span 2; }
-            .project-main p { margin-top: 8px; }
-            .project-status { grid-column: 2; justify-self: start; }
-            .faq-section { padding: 80px 20px 90px; }
-            .faq-heading { flex-direction: column; align-items: start; gap: 16px; }
-            .faq-heading > p { text-align: left; }
-            .about-strip { padding: 60px 20px; }
-            .site-footer { flex-direction: column; align-items: start; }
-        }
+@media (max-width: 720px) {
+    .topbar { padding: 0 16px; }
+    .topbar-nav { display: none; }
+    .brand { font-size: 15px; }
+    .hero { padding: 24px 12px 48px; }
+    .term-body { padding: 28px 16px 32px; }
+    .term-title { display: none; }
+    .ascii-banner { font-size: clamp(14px, 5vw, 24px); }
+    .section-kicker { font-size: 15px; }
+    .project-row { grid-template-columns: 1fr auto; gap: 8px 14px; padding: 20px 4px; }
+    .project-index { grid-row: span 2; }
+    .project-main p { margin-top: 8px; }
+    .project-status { grid-column: 2; justify-self: start; }
+    .about-strip { padding: 56px 20px; }
+    .site-footer { flex-direction: column; align-items: start; }
+}
