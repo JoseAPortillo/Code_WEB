@@ -17,6 +17,7 @@
         .brand {
             display: inline-flex;
             align-items: center;
+            gap: 12px;
             justify-self: start;
             width: max-content;
             color: var(--accent);
@@ -27,6 +28,18 @@
             width: 28px;
             height: 28px;
             filter: drop-shadow(0 0 4px rgba(202, 255, 61, 0.5));
+        }
+
+        .brand-name {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            white-space: nowrap;
+            text-shadow:
+                0 0 8px rgba(202, 255, 61, 0.6),
+                0 0 16px rgba(202, 255, 61, 0.3);
         }
 
         .brand:hover {
@@ -68,14 +81,12 @@
         .hero {
             position: relative;
             display: flex;
-            min-height: 680px;
+            min-height: 440px;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
             padding: 105px 48px 80px;
             overflow: hidden;
             border-bottom: 1px solid var(--line);
-            text-align: center;
             isolation: isolate;
         }
 
@@ -136,57 +147,16 @@
             height: auto;
         }
 
-        .hero h1 {
-            max-width: 1080px;
-            margin: 0;
-            font-family: var(--font-display);
-            font-size: clamp(58px, 7.4vw, 118px);
-            font-weight: 600;
-            letter-spacing: -0.06em;
-            line-height: 0.9;
-            text-align: center;
-        }
-
-        .hero h1 span { display: block; }
-
-        .hero-name {
-            font-size: clamp(36px, 4.5vw, 72px);
-            letter-spacing: -0.04em;
-            color: #e8e8e8;
-        }
-
-        .hero-accent {
-            color: var(--accent);
-            text-shadow: 
-                0 0 10px rgba(202, 255, 61, 0.8),
-                0 0 20px rgba(202, 255, 61, 0.6),
-                0 0 40px rgba(202, 255, 61, 0.4),
-                0 0 80px rgba(202, 255, 61, 0.2);
-            margin-left: -20px;
-        }
-
         .hero-copy {
-            max-width: 690px;
-            margin: 34px auto 0;
-            color: var(--text-soft);
-            font-size: clamp(17px, 1.6vw, 21px);
-            line-height: 1.75;
+            max-width: 760px;
+            margin: 0 auto;
+            color: var(--text);
+            font-size: clamp(19px, 2vw, 26px);
+            font-weight: 500;
+            line-height: 1.8;
         }
 
-        /* ---------- DIRECTORY (PROYECTOS) ---------- */
-        .directory {
-            scroll-margin-top: 76px;
-            padding: 112px 40px 130px;
-        }
-
-        .directory-heading {
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-            max-width: 1160px;
-            margin: 0 auto 38px;
-        }
-
+        /* ---------- PROJECTS (HERO LIST) ---------- */
         .section-kicker {
             margin: 0 0 14px;
             color: var(--accent);
@@ -201,7 +171,7 @@
             color: var(--text-soft);
         }
 
-        .directory-heading h2, .about-strip h2, .faq-section h2 {
+        .about-strip h2 {
             margin: 0;
             font-family: var(--font-display);
             font-size: clamp(32px, 4vw, 54px);
@@ -215,170 +185,53 @@
                 0 0 40px rgba(202, 255, 61, 0.4);
         }
 
-        .directory-heading > p {
-            max-width: 390px;
-            margin: 0 0 3px;
-            color: var(--text-soft);
-            font-size: 17px;
-            text-align: right;
-        }
-
-        .resource-grid {
-            display: grid;
+        .project-list {
             max-width: 1160px;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 12px;
-            scroll-margin-top: 104px;
             margin-inline: auto;
+            scroll-margin-top: 104px;
         }
 
-        .resource-card {
-            --card-accent: var(--accent);
-            position: relative;
-            display: flex;
-            min-height: 380px;
-            flex-direction: column;
-            overflow: hidden;
-            border: 1px solid var(--line);
-            border-radius: 4px;
-            background: var(--bg-card);
-            transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
-        }
-
-        .resource-card:hover {
-            z-index: 2;
-            border-color: color-mix(in srgb, var(--card-accent) 45%, var(--line-strong));
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22), 0 0 0 1px var(--accent-soft), 0 0 34px -10px var(--card-accent);
-            transform: translateY(-3px);
-        }
-
-        .resource-card.is-featured {
-            border-color: color-mix(in srgb, var(--accent) 30%, var(--line));
-            background:
-                linear-gradient(145deg, var(--accent-soft), transparent 36%),
-                var(--bg-card);
-        }
-
-        .featured-corner {
-            position: absolute;
-            top: 0;
-            right: 0;
+        .project-row {
             display: grid;
-            width: 28px;
-            height: 28px;
-            place-items: center;
-            border-bottom: 1px solid var(--line);
-            border-left: 1px solid var(--line);
-            color: var(--accent);
-            font-size: 9px;
-        }
-
-        .card-topline {
-            display: flex;
+            grid-template-columns: 44px minmax(0, 1fr) auto auto auto;
             align-items: center;
-            gap: 12px;
-            padding: 20px 19px 8px;
+            gap: 22px;
+            padding: 26px 8px;
+            border-bottom: 1px solid var(--line);
+            transition: background 180ms ease, padding-left 180ms ease;
         }
 
-        .resource-card.is-featured .card-topline { padding-right: 46px; }
+        .project-row:hover {
+            padding-left: 14px;
+            background: var(--accent-soft);
+        }
 
-        .resource-logo {
-            position: relative;
-            display: grid;
-            width: 32px;
-            height: 32px;
-            flex: 0 0 32px;
-            place-items: center;
-            border: 1px solid var(--line);
-            border-radius: 2px;
-            background: var(--bg-soft);
-            color: var(--card-accent);
+        .project-index {
+            color: var(--text-faint);
             font-family: var(--font-grid);
-            font-size: 10px;
-            text-transform: uppercase;
+            font-size: 11px;
         }
 
-        .card-topline h3 {
-            flex: 1;
-            overflow: hidden;
-            margin: 0;
-            font-size: 16px;
+        .project-main h3 {
+            margin: 0 0 6px;
+            font-size: 20px;
             font-weight: 650;
             letter-spacing: -0.02em;
-            text-overflow: ellipsis;
-            white-space: nowrap;
             color: var(--accent);
             text-shadow: 0 0 6px rgba(202, 255, 61, 0.5);
         }
 
-        .card-arrow {
-            color: var(--text-faint);
-            font-size: 14px;
-            transition: color 180ms ease, transform 180ms ease;
-        }
-
-        .resource-card:hover .card-arrow {
-            color: var(--card-accent);
-            transform: translate(2px, -2px);
-        }
-
-        .card-body {
-            flex: 1;
-            padding: 6px 19px 18px;
-        }
-
-        .card-body p {
-            display: -webkit-box;
-            overflow: hidden;
+        .project-main p {
+            max-width: 720px;
             margin: 0;
             color: var(--text-soft);
             font-size: 15px;
             line-height: 1.65;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
         }
 
-        .free-tier {
-            margin-top: 14px;
-            border-top: 1px solid var(--line);
-            padding-top: 12px;
-        }
+        .project-tags { display: flex; gap: 4px; }
 
-        .free-tier > span {
-            display: inline-flex;
-            align-items: center;
-            border: 1px solid color-mix(in srgb, var(--card-accent) 35%, var(--line));
-            border-radius: 2px;
-            padding: 2px 5px;
-            background: color-mix(in srgb, var(--card-accent) 10%, transparent);
-            color: var(--card-accent);
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .card-body .free-tier p {
-            margin-top: 8px;
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-line-clamp: 4;
-        }
-
-        .card-footer {
-            display: flex;
-            min-height: 49px;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 10px;
-            border-top: 1px solid var(--line);
-            padding: 10px 18px;
-        }
-
-        .tags { display: flex; gap: 4px; flex-wrap: wrap; }
-
-        .tags span {
-            max-width: 70px;
+        .project-tags span {
             overflow: hidden;
             border: 1px solid var(--line);
             border-radius: 2px;
@@ -389,7 +242,29 @@
             white-space: nowrap;
         }
 
-        .card-link { position: absolute; z-index: 3; inset: 0; }
+        .project-status {
+            border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+            border-radius: 2px;
+            padding: 2px 5px;
+            background: color-mix(in srgb, var(--accent) 10%, transparent);
+            color: var(--accent);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .project-arrow {
+            color: var(--text-faint);
+            font-size: 15px;
+            transition: color 180ms ease, transform 180ms ease;
+        }
+
+        .project-row:hover .project-arrow {
+            color: var(--accent);
+            transform: translate(2px, -2px);
+        }
 
         /* ---------- ABOUT STRIP ---------- */
         .about-strip {

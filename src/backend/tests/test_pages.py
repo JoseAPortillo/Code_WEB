@@ -7,7 +7,7 @@ def test_root_serves_index_html(client):
     assert "text/html" in resp.headers["content-type"]
     html = resp.text
     assert "<title>JAP" in html
-    assert 'class="resource-card"' in html
+    assert 'class="project-row"' in html
     assert 'class="brand"' in html
 
 

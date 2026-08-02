@@ -4,7 +4,7 @@
 
 // Scroll spy para el nav
 const navLinks = document.querySelectorAll(".topbar-nav a");
-const sections = ["proyectos", "sobre-mi", "faq", "contacto"].map(id => document.getElementById(id));
+const sections = ["proyectos", "sobre-mi", "contacto"].map(id => document.getElementById(id));
 const spy = new IntersectionObserver((entries) => {
     entries.forEach(en => {
         if (en.isIntersecting) {

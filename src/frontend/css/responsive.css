@@ -1,7 +1,8 @@
 
         /* ---------- RESPONSIVE ---------- */
         @media (max-width: 1024px) {
-            .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .project-row { grid-template-columns: 40px minmax(0, 1fr) auto auto; }
+            .project-tags { display: none; }
             .about-strip { grid-template-columns: 1fr; }
             .about-strip > a { max-width: 190px; }
         }
@@ -9,11 +10,15 @@
         @media (max-width: 720px) {
             .topbar { padding: 0 20px; grid-template-columns: 1fr auto; }
             .topbar-nav { display: none; }
-            .hero { padding: 80px 24px 60px; min-height: 560px; }
+            .brand-name { font-size: 18px; }
+            .hero { padding: 80px 24px 60px; min-height: 440px; }
             .directory { padding: 80px 20px 90px; }
             .directory-heading { flex-direction: column; align-items: start; gap: 16px; }
             .directory-heading > p { text-align: left; }
-            .resource-grid { grid-template-columns: 1fr; }
+            .project-row { grid-template-columns: 1fr auto; gap: 10px 16px; padding: 22px 4px; }
+            .project-index { grid-row: span 2; }
+            .project-main p { margin-top: 8px; }
+            .project-status { grid-column: 2; justify-self: start; }
             .faq-section { padding: 80px 20px 90px; }
             .faq-heading { flex-direction: column; align-items: start; gap: 16px; }
             .faq-heading > p { text-align: left; }
