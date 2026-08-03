@@ -30,6 +30,10 @@ class AppConfig:
     def index_file(self) -> Path:
         return self.static_dir / "index.html"
 
+    @property
+    def projects_dir(self) -> Path:
+        return self.static_dir / "projects"
+
 
 def get_config() -> AppConfig:
     """FastAPI dependency provider; create_app() overrides it with the app config."""

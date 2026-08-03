@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cuqui — JAP</title>
+    <meta name="description" content="Cuqui: a voice-controlled smart cooking assistant. Named timers via natural language, PWA with background notifications."/>
+    <link rel="icon" type="image/svg+xml" href="/static/img/jap-logo.svg"/>
+    <link rel="stylesheet" href="/static/css/theme.css"/>
+    <link rel="stylesheet" href="/static/css/base.css"/>
+    <link rel="stylesheet" href="/static/css/project.css"/>
+</head>
+<body>
+    <div class="site-shell">
+        <header class="project-nav">
+            <a class="brand" href="/">
+                <img class="brand-mark" src="/static/img/jap-logo-mark.svg" alt="JAP"/>
+                <span class="brand-text">JAP</span>
+            </a>
+            <nav class="project-nav-links">
+                <a href="/#proyectos">&larr; back to projects</a>
+                <a href="https://github.com/JoseAPortillo/Cuqui" rel="noopener" target="_blank">GitHub &#8599;</a>
+            </nav>
+        </header>
+
+        <main class="project-wrap">
+            <section class="project-hero">
+                <img class="project-hero-logo" src="/static/img/cuqui-logo.svg" alt="Cuqui logo"/>
+                <div>
+                    <h1>Cuqui</h1>
+                    <p class="project-hero-tagline">Voice-Controlled Smart Cooking Assistant</p>
+                    <a class="project-repo" href="https://github.com/JoseAPortillo/Cuqui" rel="noopener" target="_blank">$ git clone github.com/JoseAPortillo/Cuqui</a>
+                    <br/>
+                    <a class="project-repo" href="https://cuqui-app.duckdns.org/" rel="noopener" target="_blank">$ open cuqui-app.duckdns.org</a>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat README.md</p>
+                <p>
+                    Cuqui is a <strong>voice-controlled cooking assistant</strong> that manages multiple
+                    named timers through natural language commands &mdash; create, pause, resume, extend,
+                    reduce, rename, and check timers using <strong>voice or text</strong>.
+                </p>
+                <p>
+                    It was built as a <strong>TFM (Master&rsquo;s Thesis)</strong> project to demonstrate AI
+                    integration, natural language parsing, real-time synchronization via WebSockets, and
+                    reproducible deployment with Docker. It&rsquo;s a <strong>Progressive Web App</strong>:
+                    installable on mobile and running in production at cuqui-app.duckdns.org.
+                </p>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> ls media/</p>
+                <div class="project-media-grid">
+                    <figure class="project-media-item">
+                        <div class="project-media-placeholder">
+                            <span class="placeholder-path">cuqui-1.png</span>
+                            <span class="placeholder-badge">[image pending]</span>
+                        </div>
+                        <figcaption>Timer dashboard &mdash; named timers with remaining time</figcaption>
+                    </figure>
+                    <figure class="project-media-item">
+                        <div class="project-media-placeholder">
+                            <span class="placeholder-path">cuqui-2.png</span>
+                            <span class="placeholder-badge">[image pending]</span>
+                        </div>
+                        <figcaption>Voice command demo &mdash; Spanish and English</figcaption>
+                    </figure>
+                    <figure class="project-media-item">
+                        <div class="project-media-placeholder">
+                            <span class="placeholder-path">cuqui-3.mp4</span>
+                            <span class="placeholder-badge">[video pending]</span>
+                        </div>
+                        <figcaption>Background notification &mdash; alarm while the screen is off</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> ls src/</p>
+                <div class="project-stack">
+                    <span>Python 3.12</span>
+                    <span>FastAPI</span>
+                    <span>WebSockets</span>
+                    <span>React 19</span>
+                    <span>TypeScript</span>
+                    <span>Vite</span>
+                    <span>PWA</span>
+                    <span>Push API</span>
+                    <span>Service Worker</span>
+                    <span>SQLite</span>
+                    <span>faster-whisper</span>
+                    <span>OpenAI Whisper</span>
+                    <span>Rule parser</span>
+                    <span>LLM fallback</span>
+                    <span>Docker Compose</span>
+                    <span>Capacitor</span>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat features.md</p>
+                <ul>
+                    <li class="project-list-item">Voice or text commands in Spanish and English</li>
+                    <li class="project-list-item">Named timers: create, add time, reduce, pause, resume, cancel, rename</li>
+                    <li class="project-list-item">Background notifications with alarm sound even when the screen is off (Push API + Service Worker + Web Audio)</li>
+                    <li class="project-list-item">Real-time state sync via WebSockets</li>
+                    <li class="project-list-item">Local ASR with faster-whisper; optional cloud fallback (OpenAI Whisper + LLM for low-confidence commands)</li>
+                    <li class="project-list-item">Installable PWA for mobile &mdash; Android build via Capacitor with native alarm, screen wake and vibrate plugins</li>
+                    <li class="project-list-item">TFM demo panel: local vs cloud processing mode and API key control</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat voice.md</p>
+                <div class="project-gen">
+                    <div>
+                        <h3>Spanish</h3>
+                        <ul>
+                            <li class="project-list-item">&ldquo;10 minutos para la pasta&rdquo;</li>
+                            <li class="project-list-item">&ldquo;agregar 5 minutos al pollo&rdquo;</li>
+                            <li class="project-list-item">&ldquo;pausar el pescado&rdquo;</li>
+                            <li class="project-list-item">&ldquo;renombrar pasta a spaghetti&rdquo;</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>English</h3>
+                        <ul>
+                            <li class="project-list-item">&ldquo;set 10 minutes for pasta&rdquo;</li>
+                            <li class="project-list-item">&ldquo;add 5 minutes to the chicken&rdquo;</li>
+                            <li class="project-list-item">&ldquo;pause the fish&rdquo;</li>
+                            <li class="project-list-item">&ldquo;rename pasta to spaghetti&rdquo;</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top: 14px;">
+                    Commands are parsed by a deterministic rule-based parser; low-confidence
+                    commands fall back to an LLM.
+                </p>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat architecture.md</p>
+                <p>
+                    Clean hexagonal architecture: <strong>domain</strong> (timers, commands, parser),
+                    <strong>application</strong> (use cases), <strong>ports</strong> (intent parser,
+                    speech-to-text, push notifications, storage) and <strong>adapters</strong> (FastAPI,
+                    rule parser, faster-whisper, webpush, SQLite/in-memory storage). Docker Compose
+                    with a multi-stage build ships frontend and backend together.
+                </p>
+                <ul>
+                    <li class="project-list-item"><strong>backend</strong> &mdash; FastAPI + WebSockets, hexagonal layers, pytest suite (unit + integration)</li>
+                    <li class="project-list-item"><strong>frontend</strong> &mdash; React 19 + TypeScript, VitePWA, Service Worker, Capacitor Android build</li>
+                    <li class="project-list-item"><strong>deploy</strong> &mdash; docker-compose multi-stage, secure context (HTTPS) for voice capture</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> git status</p>
+                <div class="project-status-line">
+                    <span class="status-label">status:</span>
+                    <span class="status-body">In production as a PWA at cuqui-app.duckdns.org &mdash; installable on desktop and mobile. TFM project with published docs and presentation.</span>
+                </div>
+            </section>
+        </main>
+
+        <footer class="project-foot">
+            <a href="/#proyectos">&larr; back to projects</a>
+            <span>$ echo "made by JAP"</span>
+            <a href="https://cuqui-app.duckdns.org/" rel="noopener" target="_blank">cuqui-app.duckdns.org &#8599;</a>
+        </footer>
+    </div>
+</body>
+</html>

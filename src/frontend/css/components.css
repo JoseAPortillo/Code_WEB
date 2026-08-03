@@ -30,7 +30,7 @@
 .brand {
     display: inline-flex;
     align-items: center;
-    gap: 2px;
+    gap: 10px;
     width: max-content;
     white-space: nowrap;
     color: var(--accent);
@@ -38,6 +38,14 @@
     font-size: 17px;
     letter-spacing: 0.01em;
     transition: color 160ms ease;
+}
+
+.brand-logo {
+    display: block;
+    width: 40px;
+    height: 30px;
+    flex: none;
+    filter: drop-shadow(0 0 6px rgba(82, 168, 206, 0.35));
 }
 
 .brand:hover {
@@ -128,80 +136,156 @@
     padding: 40px clamp(20px, 4vw, 48px) 44px;
 }
 
-.ascii-banner {
+.jap-logo {
+    display: block;
     margin: 0 0 30px;
-    font-family: var(--font-body);
-    font-size: clamp(22px, 4.6vw, 60px);
-    font-weight: 400;
-    line-height: 1.03;
+    width: min(360px, 100%);
+    height: auto;
     color: var(--accent);
-    white-space: pre;
     user-select: none;
+}
+
+.jap-core text {
+    font-family: var(--font-body);
+}
+
+.jap-core .core-glow {
+    filter: drop-shadow(0 0 10px rgba(82, 168, 206, 0.3));
+}
+
+.jap-core .core-text {
+    fill: var(--text-soft);
+}
+
+.jap-core .core-text-jap {
+    font-size: 42px;
+    fill: var(--accent);
+    filter: drop-shadow(0 0 8px rgba(82, 168, 206, 0.45));
 }
 
 /* ---------- PROJECTS (HERO LIST) ---------- */
 .section-kicker {
     margin: 0 0 18px;
     color: var(--accent);
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     letter-spacing: 0.02em;
 }
 
 .project-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
     scroll-margin-top: 104px;
 }
 
 .project-row {
-    display: grid;
-    grid-template-columns: 56px minmax(0, 1fr) auto auto auto;
-    align-items: center;
-    gap: 18px;
-    padding: 18px 10px;
-    border-bottom: 1px dashed var(--line);
-    transition: background 160ms ease, padding-left 160ms ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 140px;
+    padding: 16px 16px 14px;
+    border: 1px solid var(--line);
+    background: var(--bg-raised);
+    transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 .project-row:last-child {
-    border-bottom: 0;
+    border: 1px solid var(--line);
 }
 
 .project-row:hover {
-    padding-left: 16px;
     background: var(--accent-soft);
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+    transform: translateY(-2px);
+}
+
+.project-row-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-row-link .project-row {
+    height: 100%;
+}
+
+.project-logo {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    vertical-align: -6px;
+    border-radius: 4px;
+}
+
+/* ---------- HERO SPLIT (LOGO + BIO) ---------- */
+.hero-split {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: clamp(24px, 4vw, 48px);
+    align-items: center;
+    margin: 0 0 30px;
+}
+
+.hero-split .jap-logo {
+    width: 100%;
+    margin: 0;
+}
+
+.hero-bio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 22px 18px;
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+    background: linear-gradient(180deg, var(--bg-raised), color-mix(in srgb, var(--accent) 5%, var(--bg-raised)));
+}
+
+.hero-bio .project-main h3 {
+    color: var(--text-bright);
+    text-shadow: 0 0 6px rgba(82, 168, 206, 0.35);
 }
 
 .project-index {
     color: var(--text-faint);
     font-family: var(--font-grid);
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .project-main h3 {
-    margin: 0 0 4px;
+    margin: 0;
     font-size: 22px;
     font-weight: 400;
     letter-spacing: 0.01em;
     color: var(--accent);
-    text-shadow: 0 0 6px rgba(69, 212, 131, 0.22);
+    text-shadow: 0 0 6px rgba(82, 168, 206, 0.22);
 }
 
 .project-main p {
-    max-width: 720px;
-    margin: 0;
-    color: var(--text-soft);
+    margin: 6px 0 0;
+    color: var(--text-bright);
     font-size: 16px;
-    line-height: 1.55;
+    line-height: 1.45;
+}
+
+.project-card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
 }
 
 .project-tags {
     display: flex;
-    gap: 12px;
+    gap: 6px;
 }
 
 .project-tags span {
     color: var(--text-soft);
-    font-size: 14px;
+    font-size: 15px;
     white-space: nowrap;
 }
 
@@ -217,10 +301,10 @@
 
 .project-status {
     border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line));
-    padding: 2px 8px;
+    padding: 1px 6px;
     background: color-mix(in srgb, var(--accent) 8%, transparent);
     color: var(--accent);
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     white-space: nowrap;
@@ -253,10 +337,16 @@
     max-width: 680px;
     margin: 24px 0 0;
     color: var(--text-soft);
-    font-size: 17px;
+    font-size: 21px;
 }
 
-.about-strip > a {
+.about-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.about-cta > a {
     display: flex;
     min-width: 190px;
     align-items: center;
@@ -264,11 +354,11 @@
     border: 1px solid var(--accent);
     padding: 12px 16px;
     color: var(--accent);
-    font-size: 15px;
+    font-size: 19px;
     transition: background 160ms ease, color 160ms ease;
 }
 
-.about-strip > a:hover {
+.about-cta > a:hover {
     background: var(--accent);
     color: var(--bg);
 }
@@ -293,7 +383,7 @@
 .site-footer p {
     margin: 0;
     color: var(--text-faint);
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .footer-links {
@@ -309,7 +399,7 @@
     padding: 6px 10px;
     border: 1px solid var(--line);
     color: var(--text-soft);
-    font-size: 15px;
+    font-size: 19px;
     transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
 }
 
@@ -336,7 +426,7 @@
 
 .footer-link-disabled .soon {
     color: var(--accent);
-    font-size: 13px;
+    font-size: 17px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }

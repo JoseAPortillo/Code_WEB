@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AImation — JAP</title>
+    <meta name="description" content="AImation: a desktop-first node workflow for generating animations and video from image, video and prompt inputs."/>
+    <link rel="icon" type="image/svg+xml" href="/static/img/jap-logo.svg"/>
+    <link rel="stylesheet" href="/static/css/theme.css"/>
+    <link rel="stylesheet" href="/static/css/base.css"/>
+    <link rel="stylesheet" href="/static/css/project.css"/>
+</head>
+<body>
+    <div class="site-shell">
+        <header class="project-nav">
+            <a class="brand" href="/">
+                <img class="brand-mark" src="/static/img/jap-logo-mark.svg" alt="JAP"/>
+                <span class="brand-text">JAP</span>
+            </a>
+            <nav class="project-nav-links">
+                <a href="/#proyectos">&larr; back to projects</a>
+                <a href="https://github.com/JoseAPortillo/AImotion" rel="noopener" target="_blank">GitHub &#8599;</a>
+            </nav>
+        </header>
+
+        <main class="project-wrap">
+            <section class="project-hero">
+                <img class="project-hero-logo" src="/static/img/aimation-logo.png" alt="AImation logo"/>
+                <div>
+                    <h1>AImation</h1>
+                    <p class="project-hero-tagline">Workflow for audiovisual production with AI</p>
+                    <a class="project-repo" href="https://github.com/JoseAPortillo/AImotion" rel="noopener" target="_blank">$ git clone github.com/JoseAPortillo/AImotion</a>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat README.md</p>
+                <p>
+                    AImation is a <strong>desktop-first node workflow</strong> for generating animations and
+                    video from image, video, and prompt inputs. You build a graph of connected nodes &mdash;
+                    an input video, a prompt, a generation step, sampling parameters &mdash; and the engine
+                    renders a new animation out of it.
+                </p>
+                <p>
+                    Local generation runs through <strong>diffusers</strong>; cloud adapters cover Kling,
+                    Runway, and Seedance. The shell is <strong>Tauri</strong> (local file access), the editor
+                    is <strong>React + React Flow</strong>, and the brain is a <strong>FastAPI sidecar</strong>
+                    in Python.
+                </p>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> ls media/</p>
+                <div class="project-media-grid">
+                    <figure class="project-media-item">
+                        <div class="project-media-placeholder">
+                            <span class="placeholder-path">aimation-1.png</span>
+                            <span class="placeholder-badge">[image pending]</span>
+                        </div>
+                        <figcaption>Node editor &mdash; building an image-to-video workflow</figcaption>
+                    </figure>
+                    <figure class="project-media-item">
+                        <div class="project-media-placeholder">
+                            <span class="placeholder-path">aimation-2.mp4</span>
+                            <span class="placeholder-badge">[video pending]</span>
+                        </div>
+                        <figcaption>Local generation &mdash; LTX-Video 2B rendering on RTX 3080</figcaption>
+                    </figure>
+                    <figure class="project-media-item">
+                        <div class="project-media-placeholder">
+                            <span class="placeholder-path">aimation-3.png</span>
+                            <span class="placeholder-badge">[image pending]</span>
+                        </div>
+                        <figcaption>Cloud adapters &mdash; Kling / Runway / Seedance output</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> ls src/</p>
+                <div class="project-stack">
+                    <span>Tauri</span>
+                    <span>React</span>
+                    <span>React Flow</span>
+                    <span>FastAPI</span>
+                    <span>diffusers</span>
+                    <span>Transformers</span>
+                    <span>GGUF</span>
+                    <span>LTX-Video</span>
+                    <span>Wan 2.2</span>
+                    <span>CogVideoX</span>
+                    <span>Kling</span>
+                    <span>Runway</span>
+                    <span>Seedance</span>
+                    <span>ControlNet</span>
+                    <span>LoRA</span>
+                    <span>LLM</span>
+                    <span>VLM</span>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> node --list</p>
+                <div class="project-nodes">
+                    <div class="project-node"><span class="node-kind">input</span>Image Input</div>
+                    <div class="project-node"><span class="node-kind">input</span>Video Input</div>
+                    <div class="project-node"><span class="node-kind">input</span>Prompt Input</div>
+                    <div class="project-node"><span class="node-kind">input</span>Audio Input</div>
+                    <div class="project-node"><span class="node-kind">core</span>Generation</div>
+                    <div class="project-node"><span class="node-kind">core</span>Sampling Parameters</div>
+                    <div class="project-node"><span class="node-kind">core</span>Aspect &amp; Resolution</div>
+                    <div class="project-node"><span class="node-kind">core</span>Output</div>
+                </div>
+                <p style="margin-top: 14px;">
+                    Plus generator and adapter nodes: Text-to-Image, Image-to-Video, Video-to-Video,
+                    LLM generator, VLM, ControlNet, LoRA, and CV task processors.
+                </p>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat generation.md</p>
+                <div class="project-gen">
+                    <div>
+                        <h3>Local &mdash; diffusers runners</h3>
+                        <ul>
+                            <li class="project-list-item">LTX-Video 2B (phase 1 target)</li>
+                            <li class="project-list-item">Wan 2.2</li>
+                            <li class="project-list-item">CogVideoX</li>
+                            <li class="project-list-item">GGUF quantized models</li>
+                            <li class="project-list-item">FP8 + CPU-offloaded text encoder</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Cloud &mdash; API adapters</h3>
+                        <ul>
+                            <li class="project-list-item">Kling</li>
+                            <li class="project-list-item">Runway</li>
+                            <li class="project-list-item">Seedance</li>
+                            <li class="project-list-item">Credential manager</li>
+                            <li class="project-list-item">Credit manager</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top: 14px;">
+                    Phase 1 runs LTX-Video 2B locally on an RTX 3080 with VRAM management:
+                    center-crop + resize, flow-matching denoising loop, and async task queue
+                    with progress polling.
+                </p>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat architecture.md</p>
+                <ul>
+                    <li class="project-list-item"><strong>src/backend</strong> &mdash; FastAPI sidecar: API routes, config, models, generator runners, task queue, model registry, credit &amp; credential managers</li>
+                    <li class="project-list-item"><strong>src/frontend</strong> &mdash; React + React Flow node editor</li>
+                    <li class="project-list-item"><strong>providers</strong> &mdash; cloud adapters + local runners</li>
+                    <li class="project-list-item"><strong>workers</strong> &mdash; background execution</li>
+                    <li class="project-list-item"><strong>specs</strong> &mdash; SpecSecOps phase specs</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat methodology.md</p>
+                <p>
+                    Built with <strong>SpecSecOps</strong> &mdash; Spec-Driven Development with DevSecOps
+                    integrated from day one. Every change follows
+                    <em>Explore &rarr; Propose &rarr; Spec &rarr; Design &rarr; Tasks &rarr; Apply &rarr; Verify &rarr; Archive</em>,
+                    with adversarial review on every PR and tests as a hard requirement.
+                </p>
+                <ul>
+                    <li class="project-list-item">Desktop-first. Tauri shell, local file access, sidecar backend.</li>
+                    <li class="project-list-item">Specs before code. No implementation without an approved spec.</li>
+                    <li class="project-list-item">Tests are mandatory. No test == incomplete task.</li>
+                    <li class="project-list-item">Adversarial review before merge. Every PR gets a Risk + Reliability review.</li>
+                    <li class="project-list-item">Security in every phase. Not a separate step.</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> git status</p>
+                <div class="project-status-line">
+                    <span class="status-label">status:</span>
+                    <span class="status-body">Phase 1 &mdash; LTX-Video 2B local generation on RTX 3080: backend API, async task queue, progress polling, and full pytest suite.</span>
+                </div>
+            </section>
+        </main>
+
+        <footer class="project-foot">
+            <a href="/#proyectos">&larr; back to projects</a>
+            <span>$ echo "made by JAP"</span>
+            <a href="https://github.com/JoseAPortillo/AImotion" rel="noopener" target="_blank">GitHub &#8599;</a>
+        </footer>
+    </div>
+</body>
+</html>

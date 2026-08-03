@@ -1,9 +1,9 @@
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1024px) {
-    .project-row { grid-template-columns: 48px minmax(0, 1fr) auto auto; }
+    .project-list { grid-template-columns: repeat(2, 1fr); }
     .project-tags { display: none; }
     .about-strip { grid-template-columns: 1fr; }
-    .about-strip > a { max-width: 190px; }
+    .about-cta > a { max-width: 190px; }
 }
 
 @media (max-width: 720px) {
@@ -13,12 +13,11 @@
     .hero { padding: 24px 12px 48px; }
     .term-body { padding: 28px 16px 32px; }
     .term-title { display: none; }
-    .ascii-banner { font-size: clamp(16px, 5vw, 26px); }
-    .section-kicker { font-size: 15px; }
-    .project-row { grid-template-columns: 1fr auto; gap: 8px 14px; padding: 20px 4px; }
-    .project-index { grid-row: span 2; }
-    .project-main p { margin-top: 8px; }
-    .project-status { grid-column: 2; justify-self: start; }
+    .jap-logo { width: min(240px, 100%); }
+    .hero-split { grid-template-columns: 1fr; }
+    .hero-split .jap-logo { margin: 0 auto; }
+    .section-kicker { font-size: 19px; }
+    .project-list { grid-template-columns: 1fr; }
     .about-strip { padding: 56px 20px; }
     .site-footer { flex-direction: column; align-items: start; }
 }

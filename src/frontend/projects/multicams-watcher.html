@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Multicams-Watcher — JAP</title>
+    <meta name="description" content="Multicams-Watcher: an IP camera control center with a lightweight web dashboard, PTZ and alarm control, deployable on a PC or Raspberry Pi."/>
+    <link rel="icon" type="image/svg+xml" href="/static/img/jap-logo.svg"/>
+    <link rel="stylesheet" href="/static/css/theme.css"/>
+    <link rel="stylesheet" href="/static/css/base.css"/>
+    <link rel="stylesheet" href="/static/css/project.css"/>
+</head>
+<body>
+    <div class="site-shell">
+        <header class="project-nav">
+            <a class="brand" href="/">
+                <img class="brand-mark" src="/static/img/jap-logo-mark.svg" alt="JAP"/>
+                <span class="brand-text">JAP</span>
+            </a>
+            <nav class="project-nav-links">
+                <a href="/#proyectos">&larr; back to projects</a>
+                <a href="https://github.com/JoseAPortillo/Multicams-Watcher" rel="noopener" target="_blank">GitHub &#8599;</a>
+            </nav>
+        </header>
+
+        <main class="project-wrap">
+            <section class="project-hero">
+                <img class="project-hero-logo" src="/static/img/multicams-watcher-logo.svg" alt="Multicams-Watcher logo"/>
+                <div>
+                    <h1>Multicams-Watcher</h1>
+                    <p class="project-hero-tagline">IP camera control center</p>
+                    <a class="project-repo" href="https://github.com/JoseAPortillo/Multicams-Watcher" rel="noopener" target="_blank">$ git clone github.com/JoseAPortillo/Multicams-Watcher</a>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat README.md</p>
+                <p>
+                    Multicams-Watcher turns a <strong>Raspberry Pi or PC</strong> into an IP camera
+                    control center, with a <strong>lightweight web dashboard</strong> accessible from
+                    a phone or tablet. All cameras live in one place: status, snapshots, alarms and
+                    remote control.
+                </p>
+                <p>
+                    Test on a PC first, validate from a phone or tablet, adjust the configuration,
+                    and deploy headless on a Raspberry Pi with secure remote access via Tailscale.
+                </p>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> ls media/</p>
+                <div class="project-media-grid">
+                    <figure class="project-media-item">
+                        <div class="project-media-placeholder">
+                            <span class="placeholder-path">multicams-watcher-1.png</span>
+                            <span class="placeholder-badge">[image pending]</span>
+                        </div>
+                        <figcaption>Dashboard &mdash; camera list with online/offline status</figcaption>
+                    </figure>
+                    <figure class="project-media-item">
+                        <div class="project-media-placeholder">
+                            <span class="placeholder-path">multicams-watcher-2.mp4</span>
+                            <span class="placeholder-badge">[video pending]</span>
+                        </div>
+                        <figcaption>Person &amp; face detection &mdash; movement verified as a person</figcaption>
+                    </figure>
+                    <figure class="project-media-item">
+                        <div class="project-media-placeholder">
+                            <span class="placeholder-path">multicams-watcher-3.png</span>
+                            <span class="placeholder-badge">[image pending]</span>
+                        </div>
+                        <figcaption>Expanded view &mdash; PTZ control and snapshots</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat detection.md</p>
+                <p>
+                    The core of the system: when the camera sees <strong>movement</strong>, the
+                    system checks whether it is a <strong>person</strong> and confirms it by
+                    looking for a <strong>face</strong>. Motion is only trusted as a human
+                    presence when both checks pass.
+                </p>
+                <ul>
+                    <li class="project-list-item">Movement detected through the camera stream</li>
+                    <li class="project-list-item">Person check via pose estimation (OpenCV + MediaPipe)</li>
+                    <li class="project-list-item">Face search as the final confirmation</li>
+                    <li class="project-list-item">Alarm only after a person is confirmed</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> ls src/</p>
+                <div class="project-stack">
+                    <span>Python 3.11</span>
+                    <span>OpenCV</span>
+                    <span>MediaPipe</span>
+                    <span>Person detection</span>
+                    <span>Face detection</span>
+                    <span>Web dashboard</span>
+                    <span>Tailscale</span>
+                    <span>Raspberry Pi</span>
+                    <span>ESP32-CAM</span>
+                    <span>Tapo PTZ</span>
+                    <span>Snapshots</span>
+                    <span>Simulation mode</span>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat features.md</p>
+                <ul>
+                    <li class="project-list-item">Person and face detection: motion is checked as a person and confirmed by a face search (OpenCV + MediaPipe)</li>
+                    <li class="project-list-item">Camera list with online / offline status</li>
+                    <li class="project-list-item">Expanded view per camera</li>
+                    <li class="project-list-item">Periodic snapshots</li>
+                    <li class="project-list-item">Alarm activation and deactivation</li>
+                    <li class="project-list-item">PTZ control on compatible Tapo cameras</li>
+                    <li class="project-list-item">LED switch on compatible ESP32-CAM cameras</li>
+                    <li class="project-list-item">Secure remote access with Tailscale</li>
+                    <li class="project-list-item">Simulation mode to test the dashboard without real cameras</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat architecture.md</p>
+                <ul>
+                    <li class="project-list-item"><strong>run_web_server.py</strong> &mdash; entry point (PC mode, Raspberry Pi mode, simulation)</li>
+                    <li class="project-list-item"><strong>app/web/server_api.py</strong> &mdash; web dashboard API</li>
+                    <li class="project-list-item"><strong>app/services/video_watcher.py</strong> &mdash; camera monitoring service</li>
+                    <li class="project-list-item"><strong>app/cameras/gestion_camaras.py</strong> &mdash; camera management (PTZ, LED, snapshots)</li>
+                    <li class="project-list-item"><strong>config/</strong> &mdash; camera config JSON + credentials templates</li>
+                    <li class="project-list-item"><strong>docs/</strong> &mdash; quick start, run modes, Tailscale remote access, Raspberry Pi deployment</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat deploy.md</p>
+                <ul>
+                    <li class="project-list-item">PC: run in <em>--pc-dev</em> mode, or test with <em>--simulate --sim-cameras 4</em></li>
+                    <li class="project-list-item">Raspberry Pi 3 or newer, Raspberry Pi OS (Lite for headless)</li>
+                    <li class="project-list-item">Tailscale for secure access from outside the home network</li>
+                    <li class="project-list-item">Windows convenience scripts: <em>run_web_server_pc.bat</em>, <em>run_video_watcher.bat</em></li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> git status</p>
+                <div class="project-status-line">
+                    <span class="status-label">status:</span>
+                    <span class="status-body">Finished project. Camera control center running from a PC or Raspberry Pi, with simulation mode and secure Tailscale remote access.</span>
+                </div>
+            </section>
+        </main>
+
+        <footer class="project-foot">
+            <a href="/#proyectos">&larr; back to projects</a>
+            <span>$ echo "made by JAP"</span>
+            <a href="https://github.com/JoseAPortillo/Multicams-Watcher" rel="noopener" target="_blank">GitHub &#8599;</a>
+        </footer>
+    </div>
+</body>
+</html>
