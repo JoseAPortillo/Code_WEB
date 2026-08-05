@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Task Launcher — JAP</title>
+    <meta name="description" content="Task Launcher: a Windows desktop application for managing animation-pipeline projects, users, departments and task assignments, with department script launchers for supported DCC applications."/>
+    <link rel="icon" type="image/svg+xml" href="/static/img/jap-logo.svg"/>
+    <link rel="stylesheet" href="/static/css/theme.css?v=9"/>
+    <link rel="stylesheet" href="/static/css/base.css?v=8"/>
+    <link rel="stylesheet" href="/static/css/project.css?v=12"/>
+</head>
+<body>
+    <div class="site-shell">
+        <header class="project-nav">
+            <a class="brand" href="/">
+                <img class="brand-mark" src="/static/img/jap-logo-mark.svg" alt="JAP"/>
+                <span class="brand-text">JAP</span>
+            </a>
+            <nav class="project-nav-links">
+                <a href="/#proyectos">&larr; back to projects</a>
+                <a href="https://github.com/JoseAPortillo/Task_Manager" rel="noopener" target="_blank">GitHub &#8599;</a>
+            </nav>
+        </header>
+
+        <main class="project-wrap">
+            <section class="project-hero">
+                <img class="project-hero-logo" src="/static/img/taskmanager-logo.png" alt="Task Launcher logo"/>
+                <div>
+                    <h1>Task Launcher</h1>
+                    <p class="project-hero-tagline">Animation pipeline task manager</p>
+                    <a class="project-repo" href="https://github.com/JoseAPortillo/Task_Manager" rel="noopener" target="_blank">$ git clone github.com/JoseAPortillo/Task_Manager</a>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat README.md</p>
+                <p>
+                    Task Launcher is a <strong>Windows desktop application</strong> for managing
+                    <strong>animation-pipeline projects</strong>, users, departments, and task
+                    assignments. It also launches <strong>department scripts</strong> for supported
+                    DCC applications, so each tool lives one click away from the production data.
+                </p>
+                <p>
+                    PySide6 interface over a local <strong>SQLite</strong> database, with password
+                    hashing (bcrypt), project and user management, and a nomenclature engine that
+                    keeps files and folders consistent across the pipeline.
+                </p>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> ls media/</p>
+                <div class="project-media-grid">
+                    <figure class="project-media-item">
+                        <div class="project-media-placeholder">
+                            <img src="/static/media/taskmanager/logo_color.png">
+                        </div>
+                        <figcaption>App identity &mdash; Task Launcher logo</figcaption>
+                    </figure>
+                    <figure class="project-media-item">
+                        <div class="project-media-placeholder">
+                            <img src="/static/media/taskmanager/logo_name_app.png">
+                        </div>
+                        <figcaption>Launcher branding &mdash; application name</figcaption>
+                    </figure>
+                    <figure class="project-media-item">
+                        <div class="project-media-placeholder">
+                            <span class="placeholder-path">launcher_ui.png</span>
+                            <span class="placeholder-badge">[screenshot pending]</span>
+                        </div>
+                        <figcaption>Main window &mdash; PySide6 launcher UI</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> ls src/</p>
+                <div class="project-stack">
+                    <span>Python 3.10</span>
+                    <span>PySide6</span>
+                    <span>Qt6</span>
+                    <span>SQLite</span>
+                    <span>bcrypt</span>
+                    <span>pytest</span>
+                    <span>SOLID</span>
+                    <span>Clean architecture</span>
+                    <span>Maya scripts</span>
+                    <span>MotionBuilder scripts</span>
+                    <span>3ds Max scripts</span>
+                    <span>GitHub Actions</span>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat features.md</p>
+                <ul>
+                    <li class="project-list-item">Projects: create and configure projects, versions, directories, and departments</li>
+                    <li class="project-list-item">Users: maintain users and department roles</li>
+                    <li class="project-list-item">Assignments: manage task assignments and their local SQLite data</li>
+                    <li class="project-list-item">Pipeline tools: launch scripts for Maya, MotionBuilder, 3ds Max, and other configured DCC tools</li>
+                    <li class="project-list-item">Password manager with bcrypt hashing</li>
+                    <li class="project-list-item">File and nomenclature tools to keep production paths consistent</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat architecture.md</p>
+                <ul>
+                    <li class="project-list-item"><strong>Code/launcher_UI.py</strong> &mdash; main PySide6 application entry point</li>
+                    <li class="project-list-item"><strong>Code/controllers/</strong> &mdash; UI-independent orchestration for users, projects, and assignments</li>
+                    <li class="project-list-item"><strong>Code/services/</strong> &mdash; business logic for project setup, passwords, nomenclature, and files</li>
+                    <li class="project-list-item"><strong>Code/repositories/</strong> &mdash; persistence interfaces over the legacy local data managers</li>
+                    <li class="project-list-item"><strong>Code/libs/</strong> &mdash; UI components, configuration, styling, and legacy persistence helpers</li>
+                    <li class="project-list-item"><strong>scripts/</strong> &mdash; scripts launched in supported DCC applications</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> cat methodology.md</p>
+                <p>
+                    The codebase went through a <strong>SOLID / clean-architecture refactor</strong>:
+                    controllers, services, and repositories replace UI-coupled logic, and the test
+                    suite runs <strong>headless</strong> (no GUI instantiation) on GitHub Actions.
+                </p>
+                <ul>
+                    <li class="project-list-item">Test suite: 156 passed, 2 deselected (pre-existing crashes), 2 xfailed</li>
+                    <li class="project-list-item">Runtime dependencies kept minimal: PySide6 and bcrypt</li>
+                    <li class="project-list-item">Windows-specific launcher via <em>AssignmentManager.bat</em> and a bundled Python 3.10 runtime</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-kicker"><span class="prompt">$</span> git status</p>
+                <div class="project-status-line">
+                    <span class="status-label">status:</span>
+                    <span class="status-body">Working desktop application, refactored to clean architecture with a full headless pytest suite running in CI.</span>
+                </div>
+            </section>
+        </main>
+
+        <footer class="project-foot">
+            <a href="/#proyectos">&larr; back to projects</a>
+            <span>$ echo "made by JAP"</span>
+            <a href="https://github.com/JoseAPortillo/Task_Manager" rel="noopener" target="_blank">GitHub &#8599;</a>
+        </footer>
+    </div>
+
+    <script type="module" src="/static/js/project-media-viewer.js?v=12"></script>
+</body>
+</html>
