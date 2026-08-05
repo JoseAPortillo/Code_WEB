@@ -23,3 +23,6 @@ Thumbs.db
 # Server logs
 server.log
 server.err.log
+
+# CodeGraph local index
+.codegraph/
