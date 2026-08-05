@@ -8,11 +8,6 @@ def test_static_fonts_served(client):
     assert resp.status_code == 200
 
 
-def test_assets_served(client):
-    resp = client.get("/assets/fondo.png")
-    assert resp.status_code == 200
-
-
 def test_js_served_as_javascript(client):
     """Module scripts must be served as text/javascript, not text/plain.
 

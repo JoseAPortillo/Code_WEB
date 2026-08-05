@@ -19,10 +19,6 @@ class AppConfig:
     project_root: Path = field(default_factory=lambda: _PROJECT_ROOT)
 
     @property
-    def assets_dir(self) -> Path:
-        return self.project_root / "assets"
-
-    @property
     def static_dir(self) -> Path:
         return self.project_root / "src/frontend"
 
