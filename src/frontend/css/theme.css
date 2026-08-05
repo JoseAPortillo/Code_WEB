@@ -18,8 +18,8 @@
 :root {
     color-scheme: dark;
     --font-body: "Consolas", "Cascadia Mono", "Courier New", monospace;
-    --font-display: "VT323", "Courier New", monospace;
-    --font-grid: "VT323", "Courier New", monospace;
+    --font-display: "Consolas", "VT323", "Courier New", monospace;
+    --font-grid: "Consolas", "VT323", "Courier New", monospace;
     --bg: #050807;
     --bg-raised: #0a0f0b;
     --bg-card: #1f1cc0;
