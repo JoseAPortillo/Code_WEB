@@ -17,7 +17,7 @@
 
 :root {
     color-scheme: dark;
-    --font-body: "VT323", "Courier New", monospace;
+    --font-body: "Consolas", "Cascadia Mono", "Courier New", monospace;
     --font-display: "VT323", "Courier New", monospace;
     --font-grid: "VT323", "Courier New", monospace;
     --bg: #050807;
