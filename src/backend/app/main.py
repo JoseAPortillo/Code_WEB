@@ -7,11 +7,17 @@ working from ``src/backend``.
 """
 from __future__ import annotations
 
+import mimetypes
 from fastapi import Depends, FastAPI
 from fastapi.staticfiles import StaticFiles
 
 from app.core.config import AppConfig, get_config
 from app.routers import health, pages
+
+# Windows ships no registry mapping for .js, so Python's mimetypes resolves
+# it as text/plain and browsers refuse to run module scripts served that way
+# (strict MIME checking). Register the type before mounting static files.
+mimetypes.add_type("text/javascript", ".js")
 
 
 def create_app(config: AppConfig | None = None) -> FastAPI:
