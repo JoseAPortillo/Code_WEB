@@ -1,0 +1,13 @@
+.git
+.atl
+.codegraph
+.windsurf
+.pytest_cache
+.pytest_tmp
+Design
+Plan_codeWeb
+venv
+server.log
+server.err.log
+**/__pycache__
+**/*.pyc
