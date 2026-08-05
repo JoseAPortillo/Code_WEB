@@ -174,7 +174,10 @@
 
 .project-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* minmax(0, 1fr): tracks must be able to shrink below content min-width,
+       otherwise a wide nowrap foot (tags/status) inflates its column and the
+       grid overflows the container to the right. */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
     scroll-margin-top: 104px;
 }
@@ -272,6 +275,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 8px;
     margin-top: auto;
     padding-top: 10px;
