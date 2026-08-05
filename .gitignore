@@ -26,3 +26,9 @@ server.err.log
 
 # CodeGraph local index
 .codegraph/
+
+# Internal / personal (not for public repo)
+.atl/
+Plan_codeWeb/
+Design/
+assets/cv.pdf
