@@ -164,12 +164,16 @@ function openViewer(trigger) {
     let mediaEl;
     if (trigger.tagName === "VIDEO") {
         // Clone the original so poster/type are preserved; the clone is the
-        // only element that carries controls + autoplay.
+        // only element that carries controls + autoplay. The gallery video may
+        // load through <source> children, so resolve the real source and set
+        // it explicitly to make the clone self-contained.
         const clone = trigger.cloneNode(false);
         clone.removeAttribute("controls");
         clone.removeAttribute("autoplay");
         clone.controls = true;
         clone.autoplay = true;
+        const src = resolveMediaSrc(trigger);
+        if (src) clone.src = src;
         stage.appendChild(clone);
         mediaEl = clone;
     } else {
@@ -246,6 +250,15 @@ function closeViewer() {
 
 // --- zoom/pan helpers --------------------------------------------------------
 
+// Resolve the actual source URL of an img/video. Gallery media may set it via
+// the src attribute (images, most videos) or via a <source> child (video).
+function resolveMediaSrc(media) {
+    if (media.currentSrc) return media.currentSrc;
+    const source = media.querySelector("source");
+    if (source) return source.getAttribute("src");
+    return media.getAttribute("src");
+}
+
 function stageEl() {
     return viewerEl.querySelector(".viewer-stage");
 }
@@ -310,10 +323,10 @@ function toggleZoom() {
 }
 
 // Event delegation: any img/video inside a .project-media-item that has a real
-// src opens the viewer. Placeholder slots carry no src and are skipped.
+// source opens the viewer. Placeholder slots carry no source and are skipped.
 document.addEventListener("click", (event) => {
     const media = event.target.closest(".project-media-item img, .project-media-item video");
-    if (!media || !media.getAttribute("src")) return;
+    if (!media || !resolveMediaSrc(media)) return;
     event.preventDefault();
     openViewer(media);
 });
