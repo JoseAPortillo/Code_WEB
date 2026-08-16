@@ -8,7 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="/static/img/jap-logo.svg"/>
     <link rel="stylesheet" href="/static/css/theme.css?v=9"/>
     <link rel="stylesheet" href="/static/css/base.css?v=8"/>
-    <link rel="stylesheet" href="/static/css/project.css?v=12"/>
+    <link rel="stylesheet" href="/static/css/project.css?v=13"/>
 </head>
 <body>
     <div class="site-shell">
@@ -65,9 +65,12 @@
                         <figcaption>Voice command demo &mdash; Spanish and English</figcaption>
                     </figure>
                     <figure class="project-media-item">
-                        <video controls preload="metadata">
-                            <source src="/static/media/cuqui/video_demo_web_cuqui.mp4" type="video/mp4">
-                        </video>
+                        <div class="project-media-video">
+                            <video preload="metadata">
+                                <source src="/static/media/cuqui/video_demo_web_cuqui.mp4" type="video/mp4">
+                            </video>
+                            <span class="play-badge">[video]</span>
+                        </div>
                         <figcaption>Background notification &mdash; alarm while the screen is off</figcaption>
                     </figure>
                 </div>
@@ -168,6 +171,6 @@
         </footer>
     </div>
 
-    <script type="module" src="/static/js/project-media-viewer.js?v=12"></script>
+    <script type="module" src="/static/js/project-media-viewer.js?v=13"></script>
 </body>
 </html>

@@ -281,6 +281,29 @@
     cursor: zoom-in;
 }
 
+/* Gallery videos are clickable thumbnails that open the viewer. <video>
+   cannot take pseudo-elements, so the play badge is a real sibling inside
+   a positioned wrapper. The video itself carries no native controls so taps
+   bubble up to the viewer delegation on touch devices. */
+.project-media-video {
+    position: relative;
+}
+
+.project-media-video .play-badge {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--line-strong);
+    background: var(--bg-raised);
+    padding: 6px 16px;
+    color: var(--text-soft);
+    font-size: 15px;
+    pointer-events: none;
+    cursor: zoom-in;
+    opacity: 0.92;
+}
+
 .project-media-item figcaption {
     color: var(--text-soft);
     font-size: 15px;

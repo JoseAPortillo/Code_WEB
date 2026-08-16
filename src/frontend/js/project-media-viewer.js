@@ -172,6 +172,9 @@ function openViewer(trigger) {
         clone.removeAttribute("autoplay");
         clone.controls = true;
         clone.autoplay = true;
+        // Keep iOS from jumping to the native fullscreen player; the clone
+        // plays inside the viewer with its own controls.
+        clone.setAttribute("playsinline", "");
         const src = resolveMediaSrc(trigger);
         if (src) clone.src = src;
         stage.appendChild(clone);
