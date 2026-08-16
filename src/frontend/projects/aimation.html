@@ -8,7 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="/static/img/jap-logo.svg"/>
     <link rel="stylesheet" href="/static/css/theme.css?v=9"/>
     <link rel="stylesheet" href="/static/css/base.css?v=8"/>
-    <link rel="stylesheet" href="/static/css/project.css?v=13"/>
+    <link rel="stylesheet" href="/static/css/project.css?v=14"/>
 </head>
 <body>
     <div class="site-shell">
@@ -77,7 +77,9 @@
                         <source src="/static/media/aimation/Aimation_init_text2video.mov"
                                 type="video/quicktime">
                     </video>
-                        <span class="play-badge">[video]</span>
+                        <button type="button" class="media-play" aria-label="Play video">
+                            <span class="play-badge">[video]</span>
+                        </button>
                     </div>
                         <figcaption>Video1 — text to video</figcaption>
                     </figure>
@@ -85,10 +87,12 @@
                     <div class="project-media-video">
                     <video preload="metadata"
                         poster="/static/media/aimation/aimation_image2image_poster.jpg">
-                        <source src="/static/media/aimation/Aimation_image2image.mov"
+                        <source src="/static/media/aimation/Aimation_image_2_image.mov"
                                 type="video/quicktime">
                     </video>
-                        <span class="play-badge">[video]</span>
+                        <button type="button" class="media-play" aria-label="Play video">
+                            <span class="play-badge">[video]</span>
+                        </button>
                     </div>
                         <figcaption> Video2 &mdash; image-2-image</figcaption>
                     </figure>
@@ -99,7 +103,9 @@
                         <source src="/static/media/aimation/Aimation_video2video.mov"
                                 type="video/quicktime">
                     </video>
-                        <span class="play-badge">[video]</span>
+                        <button type="button" class="media-play" aria-label="Play video">
+                            <span class="play-badge">[video]</span>
+                        </button>
                     </div>
                         <figcaption> Video3 &mdash; video-2-video</figcaption>
                     </figure>
@@ -222,6 +228,6 @@
         </footer>
     </div>
 
-    <script type="module" src="/static/js/project-media-viewer.js?v=13"></script>
+    <script type="module" src="/static/js/project-media-viewer.js?v=14"></script>
 </body>
 </html>

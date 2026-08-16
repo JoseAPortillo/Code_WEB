@@ -325,10 +325,16 @@ function toggleZoom() {
     }
 }
 
-// Event delegation: any img/video inside a .project-media-item that has a real
-// source opens the viewer. Placeholder slots carry no source and are skipped.
+// Event delegation: an image inside a .project-media-item, or a video
+// thumbnail wrapped in .project-media-video, opens the viewer. Videos are
+// covered by a real <button> (mobile browsers intercept taps on the native
+// video element), so the wrapper or the button is the actual trigger and
+// the inner <video> is resolved from it. Placeholder slots carry no source
+// and are skipped.
 document.addEventListener("click", (event) => {
-    const media = event.target.closest(".project-media-item img, .project-media-item video");
+    const trigger = event.target.closest(".project-media-video, .project-media-item img");
+    if (!trigger) return;
+    const media = trigger.tagName === "IMG" ? trigger : trigger.querySelector("video");
     if (!media || !resolveMediaSrc(media)) return;
     event.preventDefault();
     openViewer(media);

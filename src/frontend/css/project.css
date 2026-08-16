@@ -282,25 +282,33 @@
 }
 
 /* Gallery videos are clickable thumbnails that open the viewer. <video>
-   cannot take pseudo-elements, so the play badge is a real sibling inside
-   a positioned wrapper. The video itself carries no native controls so taps
-   bubble up to the viewer delegation on touch devices. */
+   cannot take pseudo-elements, and mobile browsers intercept taps on the
+   native video element itself, so a real <button> overlay covers the whole
+   thumbnail and receives every tap reliably on any engine. */
 .project-media-video {
     position: relative;
 }
 
-.project-media-video .play-badge {
+.project-media-video .media-play {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: zoom-in;
+    color: var(--text-soft);
+    font-size: 15px;
+}
+
+.project-media-video .media-play .play-badge {
     border: 1px solid var(--line-strong);
     background: var(--bg-raised);
     padding: 6px 16px;
     color: var(--text-soft);
     font-size: 15px;
-    pointer-events: none;
-    cursor: zoom-in;
     opacity: 0.92;
 }
 
