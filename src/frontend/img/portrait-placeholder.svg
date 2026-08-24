@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 144" role="img" aria-label="Portrait placeholder">
+    <defs>
+        <linearGradient id="pp-bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0a0f0b"/>
+            <stop offset="1" stop-color="#111a14"/>
+        </linearGradient>
+    </defs>
+    <rect width="260" height="144" fill="url(#pp-bg)"/>
+    <text x="130" y="18" text-anchor="middle" font-family="Consolas, 'Cascadia Mono', monospace" font-size="10" letter-spacing="3" fill="#3f6650">PORTRAIT PLACEHOLDER</text>
+    <g fill="#274434">
+        <circle cx="130" cy="60" r="25"/>
+        <path d="M75 144 c5 -33 29 -47 55 -47 s50 14 55 47 z"/>
+    </g>
+</svg>

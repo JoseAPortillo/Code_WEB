@@ -42,6 +42,9 @@
                                     <stop offset="0" stop-color="#0a0f0b"/>
                                     <stop offset="1" stop-color="#0d1410"/>
                                 </linearGradient>
+                                <clipPath id="core-photo-clip">
+                                    <rect x="45" y="39" width="130" height="72" rx="4"/>
+                                </clipPath>
                             </defs>
 
                             <!-- outward circuit traces -->
@@ -98,17 +101,16 @@
                             </g>
 
                             <rect class="core-glow" x="40" y="34" width="140" height="82" rx="6" fill="url(#core-body)" stroke="var(--accent)" stroke-width="1.5"/>
-                            <rect x="45" y="39" width="130" height="72" rx="4" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-                            <g class="core-traces" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.45">
-                                <path d="M60 74 h16 v12 h10"/>
-                                <path d="M150 62 h14 v-10 h8"/>
-                                <path d="M86 96 h18 v-8 h10"/>
-                                <path d="M136 82 h-12 v10 h-10"/>
+                            <!-- portrait window: photo fills the chip core, name band on top -->
+                            <g clip-path="url(#core-photo-clip)">
+                                <image href="/static/img/portrait-placeholder.svg" x="45" y="39" width="130" height="72" preserveAspectRatio="xMidYMid slice">
+                                    <title>Portrait of Jose A Portillo</title>
+                                </image>
+                                <rect x="45" y="94" width="130" height="17" fill="#050807" opacity="0.82"/>
                             </g>
-                            <text class="core-text" x="110" y="60" text-anchor="middle" font-size="10" letter-spacing="2">JOSE A PORTILLO</text>
-                            <line x1="60" y1="68" x2="160" y2="68" stroke="var(--line-strong)" stroke-width="1"/>
-                            <text class="core-text-jap" x="110" y="93" text-anchor="middle" font-size="42" fill="var(--accent)">JAP</text>
-                            <text class="core-text" x="110" y="107" text-anchor="middle" font-size="10" letter-spacing="3">WEBSITE</text>
+                            <!-- redraw inner frame above the photo -->
+                            <rect x="45" y="39" width="130" height="72" rx="4" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
+                            <text class="core-text" x="110" y="105.5" text-anchor="middle" font-size="10" letter-spacing="2">JOSE A PORTILLO</text>
                         </svg>
                         <aside class="hero-bio">
                             <span class="project-index">$ whoami</span>
