@@ -45,6 +45,17 @@
                                 <clipPath id="core-photo-clip">
                                     <rect x="45" y="39" width="130" height="72" rx="4"/>
                                 </clipPath>
+                                <filter id="portrait-filter" x="0" y="0" width="100%" height="100%">
+                                    <feColorMatrix type="saturate" values="0.25"/>
+                                    <feComponentTransfer>
+                                        <feFuncR type="linear" slope="0.75"/>
+                                        <feFuncG type="linear" slope="0.75"/>
+                                        <feFuncB type="linear" slope="0.75"/>
+                                    </feComponentTransfer>
+                                </filter>
+                                <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+                                    <line x1="0" y1="0" x2="4" y2="0" stroke="#000" stroke-width="1" opacity="0.3"/>
+                                </pattern>
                             </defs>
 
                             <!-- outward circuit traces -->
@@ -103,14 +114,15 @@
                             <rect class="core-glow" x="40" y="34" width="140" height="82" rx="6" fill="url(#core-body)" stroke="var(--accent)" stroke-width="1.5"/>
                             <!-- portrait window: photo fills the chip core, name band on top -->
                             <g clip-path="url(#core-photo-clip)">
-                                <image href="/static/img/portrait-placeholder.svg" x="45" y="39" width="130" height="72" preserveAspectRatio="xMidYMid slice">
+                                <image href="/static/img/pixel-art.jpg" x="45" y="39" width="130" height="72" preserveAspectRatio="xMidYMid slice" filter="url(#portrait-filter)">
                                     <title>Portrait of Jose A Portillo</title>
                                 </image>
-                                <rect x="45" y="94" width="130" height="17" fill="#050807" opacity="0.82"/>
+                                <rect x="45" y="39" width="130" height="72" fill="url(#scanlines)"/>
+                                <!--<rect x="45" y="94" width="130" height="17" fill="#050807" opacity="0.82"/> -->
                             </g>
                             <!-- redraw inner frame above the photo -->
-                            <rect x="45" y="39" width="130" height="72" rx="4" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-                            <text class="core-text" x="110" y="105.5" text-anchor="middle" font-size="10" letter-spacing="2">JOSE A PORTILLO</text>
+                             <rect x="45" y="39" width="130" height="72" rx="4" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
+                             <!-- <text class="core-text" x="110" y="105.5" text-anchor="middle" font-size="10" letter-spacing="2">JAP</text>-->
                         </svg>
                         <aside class="hero-bio">
                             <span class="project-index">$ whoami</span>
